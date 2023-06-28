@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def home(request):
+'''def home(request):
     title = 'Navin'
     return render(request, 'home.html', {
         'title': title
@@ -13,4 +13,7 @@ def add(request):
     res = val1 + val2
     return render(request, 'result.html',{
         'result': res
-    })
+    })'''
+
+def index(request):
+    return render(request, 'index.html')
