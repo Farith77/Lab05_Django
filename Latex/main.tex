@@ -1,0 +1,382 @@
+%package list
+\documentclass{article}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{url}
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{natbib}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstdefinestyle{ascii-tree}{
+    literate={├}{|}1 {─}{--}1 {└}{+}1 
+  }
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+%\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemEmail}{agarciaa@unsa.edu.pe}
+\newcommand{\itemStudent}{Alan Jorge Garcia Apaza}
+\newcommand{\itemCourse}{PWeb2}
+\newcommand{\itemCourseCode}{20231001}
+\newcommand{\itemSemester}{I}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2023 - A}
+\newcommand{\itemInput}{Del 14 de junio  2023}
+\newcommand{\itemOutput}{Al 28 de junio 2023}
+\newcommand{\itemPracticeNumber}{06}
+\newcommand{\itemTheme}{Django}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla} %esto no funciona cuando se usa babel
+\AtBeginDocument{%
+	\renewcommand\tablename{Tabla}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet}}}
+\fancyfoot[L]{Estudiante Alan Jorge Garcia Apaza}
+\fancyfoot[C]{\itemCourse}
+\fancyfoot[R]{Página \thepage}
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color, colortbl}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+
+\lstset{frame=tb,
+	language=bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	backgroundcolor= \color{codebackground},
+}
+
+\begin{document}
+	
+	\vspace*{10px}
+	
+	\begin{center}	
+		\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+	\end{center}
+	\centerline{\textbf{\Large Tema: \itemTheme}}
+	%\vspace*{0.5cm}	
+
+	\begin{flushright}
+		\begin{tabular}{|M{2.5cm}|N|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Nota}  \\
+			\hline 
+			     \\[30pt]
+			\hline 			
+		\end{tabular}
+	\end{flushright}	
+
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela}  & \color{white}\textbf{Asignatura}   \\
+			\hline 
+			{\itemStudent \par \itemEmail} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
+			\hline 			
+		\end{tabular}
+	\end{table}		
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema}  & \color{white}\textbf{Duración}   \\
+			\hline 
+			\itemPracticeNumber & \itemTheme & 04 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio}  & \color{white}\textbf{Fecha de entrega}   \\
+			\hline 
+			\itemAcademic & \itemInput &  \itemOutput  \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\section{Tarea}
+	\begin{itemize}		
+		\item Lab 6 - Aplicacion Destinos Turisticos con Django - Lab A.
+		\item Deberán replicar la actividad del video donde se obtiene una plantilla de una aplicación de Destinos turísticos y adecuarla a un proyecto en blanco Django.
+		\item Luego trabajar con un modelo de tabla DestinosTuristicos donde se guarden nombreCiudad,  descripcionCiudad, imagenCiudad, precioTour, ofertaTour (booleano).  Estos destinos turisticos deberán ser agregados en una vista dinámica utilizano tags for e if.
+        \item Para ello crear una carpeta dentro del proyecto github colaborativo con el docente, e informar el link donde se encuentra (compartir con el usuario CarloCorralesD) .  El trabajo será revisado en laboratorios los 2 siguientes semanas hasta el miercoles 28 de junio y se presentará el trabajo final en Flipgrid.
+	\end{itemize}
+		
+	\section{Equipos, materiales y temas utilizados}
+	\begin{itemize}
+		\item Sistema Operativo Ubuntu GNU Linux 23 lunar 64 bits Kernell 6.2.
+		\item VIM 9.0.
+		\item Python 3.11.2.
+		\item Git 2.39.2.
+		\item Cuenta en GitHub con el correo institucional.
+		\item Django 4.0.
+        \item virtualenv 2.3.
+	\end{itemize}
+	
+	\section{URL de Repositorio Github}
+	\begin{itemize}
+		\item[a.] URL del Repositorio GitHub.
+		\item \url{https://github.com/Farith77/Lab05_Django.git}
+	\end{itemize}
+	
+	\section{Resolucion de ejercicios}
+	
+	\subsection{Git, virtual env amd Django}
+	\begin{itemize}	
+		\item Empezaremos inicializando el repositorio git y creando nuestro entorno virtual
+        \begin{lstlisting}[language=bash, caption={git and virtual env}][H]
+            $ git init
+            $ pip install virtualenv
+            $ virtualenv venv
+            $ source venv/Scripts/activate
+        \end{lstlisting}
+		\item instalamos django, inicializamos un proyecto y una aplicacion
+		
+    	\begin{lstlisting}[language=bash,caption={proyect django}][H]
+    		$ pip install django
+            $ python manage.py startproyect myvenv
+            $ python manage.py startapp myapp
+    	\end{lstlisting}
+    \end{itemize}
+    \subsection{Ahora continuaremos mostrando todos los archivos en los que agregue o cambie codigo} 
+	\lstinputlisting[language=Python, caption={mysite/urls.py},numbers=left,]{src/urls.py}	
+	\lstinputlisting[language=Python, caption={mysite/urls.py},numbers=left,]{src/settings.py}
+	\lstinputlisting[language=Python, caption={myapp/views.py},numbers=left,]{src/views.py}
+	
+	\subsection{archivos creados}
+        \item se crearon una nueva urls y algunas plantillas, junto con algunos archivos estaticos
+	\lstinputlisting[language=Python, caption={myapp/urls.py},numbers=left,]{creados/urls.py}
+	
+	\lstinputlisting[language=html, caption={templates/base.html},numbers=left,]{creados/base.html}
+	\lstinputlisting[language=html, caption={templates/home.html},numbers=left,]{creados/home.html}
+	\lstinputlisting[language=html, caption={templates/result.html},numbers=left,]{creados/result.html}
+	\lstinputlisting[language=html, caption={templates/index.html},numbers=left,]{creados/index.html}
+
+ \subsection{Commits}
+     \begin{lstlisting}[language=bash,caption={Todos los commit hechos para el laboratorio 6}][H]
+    	$ git log
+     commit 382dfebbcfb4d0ab9f788256f2077878a73565c0 (HEAD -> main, origin/main, origin/HEAD)
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Wed Jun 28 23:27:14 2023 -0500
+
+    agregando todo el frontend
+
+commit 1058a48457d3772c4010cd089707b51536697459
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Wed Jun 28 11:55:48 2023 -0500
+
+    agregando paltilla de viajes
+
+commit 333333c023bdbbd121843566815260f2ed63ba76
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Wed Jun 28 01:02:16 2023 -0500
+
+    Usando el metodo Post
+
+commit e6a7e6e86529664f37bca54dedb03343b063dcce
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Tue Jun 27 20:16:34 2023 -0500
+
+:...skipping...
+commit 382dfebbcfb4d0ab9f788256f2077878a73565c0 (HEAD -> main, origin/main, origin/HEAD)
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Wed Jun 28 23:27:14 2023 -0500
+
+    agregando todo el frontend
+
+commit 1058a48457d3772c4010cd089707b51536697459
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Wed Jun 28 11:55:48 2023 -0500
+
+    agregando paltilla de viajes
+
+commit 333333c023bdbbd121843566815260f2ed63ba76
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Wed Jun 28 01:02:16 2023 -0500
+
+    Usando el metodo Post
+
+commit e6a7e6e86529664f37bca54dedb03343b063dcce
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Tue Jun 27 20:16:34 2023 -0500
+
+    Agregando metodo add
+
+commit d54d1e1b42093c5e90b52c22cf3b56861017f17c
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Tue Jun 27 00:21:38 2023 -0500
+
+    agregando archivos externos a nuestro html
+
+commit b6592dc41899dde5d04c06f41582742531c5324a
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Sat Jun 24 17:53:51 2023 -0500
+
+    agregando plantillas
+
+commit d33aac2051cbc71ae8e78bb5ce499d03c2c55b10
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Sat Jun 24 14:55:52 2023 -0500
+
+    agregando myapp
+
+commit 35ce809fdbe6e6a8c8e83f900978be60b4ac3f27
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Sat Jun 24 14:51:00 2023 -0500
+
+    agregando git ignore
+
+commit be685abb21aee33aa814b667ef1fd27976979c22
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Sat Jun 24 13:49:59 2023 -0500
+
+    Creando un proyecto Django
+
+commit 7594be9fda72d6ea712dce630edb164349c444bb
+Author: Farith77 <120695805+Farith77@users.noreply.github.com>
+Date:   Sat Jun 24 13:09:30 2023 -0500
+
+:
+commit 382dfebbcfb4d0ab9f788256f2077878a73565c0 (HEAD -> main, origin/main, origin/HEAD)
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Wed Jun 28 23:27:14 2023 -0500
+
+    agregando todo el frontend
+
+commit 1058a48457d3772c4010cd089707b51536697459
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Wed Jun 28 11:55:48 2023 -0500
+
+    agregando paltilla de viajes
+
+commit 333333c023bdbbd121843566815260f2ed63ba76
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Wed Jun 28 01:02:16 2023 -0500
+
+    Usando el metodo Post
+
+commit e6a7e6e86529664f37bca54dedb03343b063dcce
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Tue Jun 27 20:16:34 2023 -0500
+
+    Agregando metodo add
+
+commit d54d1e1b42093c5e90b52c22cf3b56861017f17c
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Tue Jun 27 00:21:38 2023 -0500
+
+    agregando archivos externos a nuestro html
+
+commit b6592dc41899dde5d04c06f41582742531c5324a
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Sat Jun 24 17:53:51 2023 -0500
+
+    agregando plantillas
+
+commit d33aac2051cbc71ae8e78bb5ce499d03c2c55b10
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Sat Jun 24 14:55:52 2023 -0500
+
+    agregando myapp
+
+commit 35ce809fdbe6e6a8c8e83f900978be60b4ac3f27
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Sat Jun 24 14:51:00 2023 -0500
+
+    agregando git ignore
+
+commit be685abb21aee33aa814b667ef1fd27976979c22
+Author: Farith <agarciaa@unsa.edu.pe>
+Date:   Sat Jun 24 13:49:59 2023 -0500
+
+    Creando un proyecto Django
+
+commit 7594be9fda72d6ea712dce630edb164349c444bb
+Author: Farith77 <120695805+Farith77@users.noreply.github.com>
+Date:   Sat Jun 24 13:09:30 2023 -0500
+
+     \end{lstlisting}
+	
+	\subsection{\textcolor{red}{Entregable Informe}}
+	\begin{table}[H]
+		\caption{Tipo de Informe}
+		\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+		{\renewcommand{\arraystretch}{1.5}% for the vertical padding
+		\begin{tabular}{|p{3cm}|p{12cm}|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{\textcolor{red}{Informe}}}  \\
+			\hline 
+			\textbf{\textcolor{red}{Latex}} & \textcolor{blue}{El informe está en formato PDF desde Latex,  con un formato limpio (buena presentación) y facil de leer.}   \\ 
+			\hline 
+			
+			
+		\end{tabular}
+	}
+	\end{table}
+ 
+			
+\end{document}
